@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-sans-subtitle: 'Montserrat', sans-serif;
+    --font-handwriting: 'Caveat', cursive;
+    --font-script: 'Dancing Script', cursive;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #4A3B52;
+    background: #F8F4FF;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+
+.sans-subtitle {
+  font-family: var(--font-sans-subtitle);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Warm Organic Shadows & Pills */
+.organic-card-shadow {
+  box-shadow: 0 14px 35px -10px rgba(109, 90, 117, 0.18), 0 4px 14px -2px rgba(109, 90, 117, 0.08);
+}
+
+.organic-btn-shadow {
+  box-shadow: 0 10px 30px -10px rgba(109, 90, 117, 0.25);
+}
+
+.paper-shadow {
+  box-shadow: 0 4px 20px -2px rgba(92, 60, 48, 0.12), 0 2px 6px -1px rgba(92, 60, 48, 0.08);
+}
+
+.paper-shadow-lg {
+  box-shadow: 0 14px 35px -4px rgba(78, 46, 36, 0.18), 0 4px 12px -2px rgba(78, 46, 36, 0.1);
+}
+
+.taped-photo {
+  position: relative;
+}
+
+.taped-photo::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 60px;
+  height: 20px;
+  background: rgba(254, 240, 215, 0.75);
+  border: 1px dashed rgba(210, 160, 140, 0.4);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
+/* Washi Tape Strip */
+.washi-tape-pink {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(244, 180, 195, 0.75),
+    rgba(244, 180, 195, 0.75) 8px,
+    rgba(255, 225, 230, 0.8) 8px,
+    rgba(255, 225, 230, 0.8) 16px
+  );
+  box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+}
+
+.washi-tape-gold {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(245, 218, 150, 0.75),
+    rgba(245, 218, 150, 0.75) 8px,
+    rgba(255, 245, 210, 0.8) 8px,
+    rgba(255, 245, 210, 0.8) 16px
+  );
+  box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+}
+
+/* Realistic Candle Flame Animation */
+@keyframes flameFlicker {
+  0% { transform: translateX(-50%) scale(1, 1) rotate(-2deg); }
+  25% { transform: translateX(-50%) scale(1.05, 1.1) rotate(2deg); }
+  50% { transform: translateX(-50%) scale(0.95, 0.98) rotate(-1deg); }
+  75% { transform: translateX(-50%) scale(1.08, 1.15) rotate(3deg); }
+  100% { transform: translateX(-50%) scale(1, 1) rotate(-2deg); }
+}
+
+.candle-flame-anim {
+  animation: flameFlicker 0.6s infinite ease-in-out alternate;
+}
+
+/* Smoke puff */
+@keyframes smokeRise {
+  0% { opacity: 0.8; transform: translateY(0) scale(0.6); }
+  100% { opacity: 0; transform: translateY(-40px) scale(2.2); }
+}
+
+.smoke-puff {
+  animation: smokeRise 1.2s ease-out forwards;
+}
+
+/* Scrapbook Message Pink Highlighter */
+.scrap-hl {
+  background-color: #F8B4CB;
+  background-color: rgba(248, 180, 203, 0.58);
+  color: #432E48;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-weight: 500;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Tangled Lantern Festival Scene */
+@keyframes lanternFloatUp {
+  0% {
+    transform: translateY(112vh);
+  }
+  100% {
+    transform: translateY(-35vh);
+  }
+}
+
+@keyframes lanternDriftA {
+  0%, 100% {
+    transform: translateX(var(--drift-x-neg, -15px)) rotate(var(--drift-rot-neg, -4deg));
+  }
+  50% {
+    transform: translateX(var(--drift-x, 15px)) rotate(var(--drift-rot, 4deg));
+  }
+}
+
+@keyframes lanternDriftB {
+  0%, 100% {
+    transform: translateX(var(--drift-x, 15px)) rotate(var(--drift-rot, 4deg));
+  }
+  50% {
+    transform: translateX(var(--drift-x-neg, -15px)) rotate(var(--drift-rot-neg, -4deg));
+  }
+}
+
+@keyframes lanternFlickerWarm {
+  0%, 100% {
+    opacity: 0.9;
+    filter: brightness(0.96) drop-shadow(0 0 var(--lantern-glow-sm, 10px) rgba(255, 180, 50, 0.45));
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.1) drop-shadow(0 0 var(--lantern-glow-lg, 24px) rgba(255, 160, 40, 0.75));
+  }
+}
+
+@keyframes starTwinkleGlow {
+  0%, 100% {
+    opacity: var(--star-min-op, 0.2);
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: var(--star-max-op, 0.95);
+    transform: scale(1.25);
+  }
+}
+
+@keyframes waterGlimmer {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scaleX(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes castleWindowTwinkle {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 2px rgba(255, 215, 100, 0.6));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgba(255, 225, 120, 0.9));
+  }
+}
+
+@keyframes streetLampFlicker {
+  0%, 100% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 16px rgba(255, 170, 50, 0.85)) drop-shadow(0 0 35px rgba(255, 140, 30, 0.5));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 22px rgba(255, 185, 60, 1)) drop-shadow(0 0 45px rgba(255, 150, 40, 0.65));
+  }
+}
+
+/* Hide "Powered by Netlify" badge */
+[data-netlify-badge],
+.netlify-badge,
+a[href*="netlify.com"],
+a[href*="netlify.app"],
+div[id*="netlify"],
+div[class*="netlify"],
+iframe[src*="netlify"],
+netlify-badge,
+[class*="netlify-badge"],
+[id*="netlify-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
