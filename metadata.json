@@ -1,0 +1,6 @@
+{
+  "name": "Happy Birthday Mrrithula",
+  "description": "A magical, interactive birthday surprise website with a scrapbook, personal letter, cake candle ceremony, and birthday wishes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
