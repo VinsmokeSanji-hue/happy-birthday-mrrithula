@@ -142,19 +142,6 @@ export const FinalScreen: React.FC<FinalScreenProps> = () => {
               <strong className="text-[#4A3B52] font-serif-title italic text-base font-bold">
                 {BIRTHDAY_CONFIG.herName}
               </strong>
-              <span
-                className="absolute font-script text-[#8A6070] italic pointer-events-none"
-                style={{
-                  fontSize: '11px',
-                  right: 0,
-                  top: '100%',
-                  lineHeight: 1.1,
-                  marginTop: '1px',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                my love
-              </span>
             </span>
           </div>
           <div className="text-xs sans-subtitle uppercase tracking-widest text-[#8A7394]">

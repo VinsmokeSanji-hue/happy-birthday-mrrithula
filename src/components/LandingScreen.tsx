@@ -118,19 +118,6 @@ export const LandingScreen: React.FC<LandingScreenProps> = ({ onYes }) => {
             <span className="text-[#FFD269] text-xl sm:text-2xl font-light opacity-85">✦</span>
             <span className="relative inline-block">
               {BIRTHDAY_CONFIG.herName}
-              <span
-                className="absolute font-script text-[#FFD0A0] italic pointer-events-none"
-                style={{
-                  fontSize: 'clamp(11px, 2.2vw, 16px)',
-                  right: 0,
-                  top: '100%',
-                  lineHeight: 1.1,
-                  textShadow: '0 0 12px rgba(255, 180, 80, 0.5)',
-                  marginTop: '-2px',
-                }}
-              >
-                my love
-              </span>
             </span>
             <span className="text-[#FFD269] text-xl sm:text-2xl font-light opacity-85">✦</span>
           </span>
