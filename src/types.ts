@@ -14,6 +14,8 @@ export interface BirthdayConfig {
   letterGreeting: string;
   letterParagraph1: string;
   letterParagraph2: string;
+  letterParagraph3: string;
+  letterParagraph4: string;
   letterSignoff: string;
   finalTopNote: string;
   finalMainNote: string;

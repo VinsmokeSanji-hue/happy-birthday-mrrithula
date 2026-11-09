@@ -142,6 +142,18 @@ export const LetterScreen: React.FC<LetterScreenProps> = ({ onNext }) => {
       '-=0.3'
     )
     .fromTo(
+      '.letter-line-5',
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.7 },
+      '-=0.3'
+    )
+    .fromTo(
+      '.letter-line-6',
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.7 },
+      '-=0.3'
+    )
+    .fromTo(
       continueBtnRef.current,
       { opacity: 0, y: 16, scale: 0.95 },
       { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.7)' },
@@ -298,7 +310,13 @@ export const LetterScreen: React.FC<LetterScreenProps> = ({ onNext }) => {
             <p className="letter-line-4 text-[#6D5A75] font-normal leading-relaxed">
               {BIRTHDAY_CONFIG.letterParagraph2}
             </p>
-            <p className="letter-line-4 pt-2 font-serif-title italic text-lg sm:text-xl text-[#4A3B52] font-semibold">
+            <p className="letter-line-5 text-[#6D5A75] font-normal leading-relaxed">
+              {BIRTHDAY_CONFIG.letterParagraph3}
+            </p>
+            <p className="letter-line-6 text-[#6D5A75] font-normal leading-relaxed">
+              {BIRTHDAY_CONFIG.letterParagraph4}
+            </p>
+            <p className="letter-line-6 pt-2 font-serif-title italic text-lg sm:text-xl text-[#4A3B52] font-semibold">
               {BIRTHDAY_CONFIG.letterSignoff}
             </p>
           </div>
